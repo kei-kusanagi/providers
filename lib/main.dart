@@ -5,8 +5,12 @@ import 'package:provider_counter/screens/home_screen.dart';
 
 void main() {
   runApp(
-    ChangeNotifierProvider(
-      create: (_) => CounterProvider(),
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider<CounterProvider>(
+            create: (_) => CounterProvider()),
+        ChangeNotifierProvider<SumaMaster>(create: (_) => SumaMaster()),
+      ],
       child: const MyApp(),
     ),
   );

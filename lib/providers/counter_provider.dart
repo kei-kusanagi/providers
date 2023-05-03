@@ -12,3 +12,14 @@ class CounterProvider with ChangeNotifier {
     //el que vamos a usar para afuera sera en este caso counter_provder
   }
 }
+
+class SumaMaster with ChangeNotifier {
+  String _resultado = '';
+
+  String get resultado => _resultado;
+
+  void Sumar(numero1, numero2) {
+    _resultado = numero1 + numero2;
+    notifyListeners();
+  }
+}
